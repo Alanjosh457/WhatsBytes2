@@ -1,0 +1,297 @@
+/* General Layout */
+.dashboard {
+    display: flex;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+  }
+  
+  .sidebar {
+    width: 250px;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+  }
+  
+  .sidebar h2 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .sidebar ul li {
+    margin: 15px 0;
+  }
+  
+  .sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+  }
+  
+  .sidebar ul li a:hover {
+    background-color: #444;
+  }
+  
+  .sidebar ul li button {
+    color: white;
+    background-color: #f44336;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .sidebar ul li button:hover {
+    background-color: #d32f2f;
+  }
+  
+  /* Main content area */
+  .mainContent {
+    flex: 1;
+    padding: 40px;
+  }
+  
+  .mainContent h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+  
+  .mainContent p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+  }
+  
+  .actions {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .actionBtn {
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+  }
+  
+  .actionBtn:hover {
+    background-color: #45a049;
+  }
+  
+
+  
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px;
+  }
+  
+  .title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 24px;
+  }
+  
+  .authButton {
+    margin-bottom: 24px;
+    background-color: #007bff;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 6px;
+  }
+  
+  .authButton:hover {
+    background-color: #0056b3;
+  }
+  
+  .authenticatedMessage {
+    color: #28a745;
+    margin-bottom: 16px;
+  }
+  
+  .createTableButton {
+    margin-bottom: 24px;
+    background-color: #28a745;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 6px;
+  }
+  
+  .createTableButton:hover {
+    background-color: #218838;
+  }
+  
+
+  .table-heading {
+    position: relative;
+    z-index: 10;  /* Higher value to ensure it stays above */
+  }
+  
+  /* Ensure the loaded Google Sheet content has a lower z-index */
+  .google-sheet-table {
+    position: relative;
+    z-index: 1;  /* Lower value to prevent overlap with the heading */
+  }
+
+
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed; /* Ensures headers and data align properly */
+  }
+  
+  th, td {
+    padding: 8px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: #f4f4f4; /* Highlight the headings */
+    position: sticky;
+    top: 0; /* Keeps the headings visible when scrolling */
+    z-index: 10; /* Keeps headings on top */
+  }
+  
+  .modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modalContainer {
+    background-color: white;
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    max-height: 80vh; /* Add max-height */
+    overflow-y: auto; 
+  }
+
+
+  .modalContainer::-webkit-scrollbar {
+    width: 8px; /* Set width of the scrollbar */
+  }
+  
+  .modalContainer::-webkit-scrollbar-thumb {
+    background-color: #888; /* Color of the thumb */
+    border-radius: 8px; /* Rounded corners */
+    transition: background-color 0.3s ease;
+  }
+  
+  .modalContainer::-webkit-scrollbar-thumb:hover {
+    background-color: #555; /* Darker thumb color on hover */
+  }
+  
+  .modalContainer::-webkit-scrollbar-track {
+    background-color: #f1f1f1; /* Color of the scrollbar track */
+    border-radius: 8px;
+  }
+  
+  .modalHeader {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 16px;
+  }
+  
+  .modalField {
+    margin-bottom: 16px;
+  }
+  
+  .modalLabel {
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 8px;
+    display: block;
+  }
+  
+  .modalInput {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    transition: border-color 0.3s ease;
+  }
+  
+  .modalInput:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  .button {
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .button:hover {
+    background-color: #0056b3;
+  }
+  
+  .closeButton {
+    padding: 12px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+  .closeButton:hover {
+    background-color: #d32f2f;
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 24px;
+  }
+  
+  .tableHeader {
+    border: 1px solid #ddd;
+    padding: 12px;
+  }
+  
+  .tableRow {
+    border: 1px solid #ddd;
+  }
+  
+  .tableCell {
+    padding: 12px;
+    border: 1px solid #ddd;
+  }
+  
+  .input {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+  }
+  

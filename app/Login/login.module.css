@@ -1,0 +1,123 @@
+/* General styling */
+
+
+  
+  /* Form container */
+  .form {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 20px;
+  }
+  
+  /* Form fields */
+  .forms {
+    margin-bottom: 20px;
+  }
+  
+  .field {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+
+  
+  .error {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+  }
+  
+  /* Button styling */
+  .bns {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .regger {
+    padding: 14px;
+    background-color: #4e73df;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .regger:hover {
+    background-color: #2e59d9;
+  }
+  
+  .alr {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .link {
+    color: #4e73df;
+    cursor: pointer;
+    border: none;
+    background: none;
+  }
+  
+  .link:hover {
+    text-decoration: underline;
+  }
+  
+  /* Background and images */
+  .skyy {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: auto;
+    opacity: 0.1;
+  }
+  
+  .cu2 {
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+  }
+  
+  .smj3 {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    margin-top: 30px;
+  }
+  
+  .logres {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .regi, .logi {
+    padding: 12px 25px;
+    border: 1px solid #4e73df;
+    background-color: white;
+    color: #4e73df;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .regi:hover, .logi:hover {
+    background-color: #4e73df;
+    color: white;
+  }
+  
+  .selected {
+    background-color: #4e73df;
+    color: white;
+    border-color: #4e73df;
+  }
+  
+  
