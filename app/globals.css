@@ -82,7 +82,7 @@ input:focus, textarea:focus, select:focus, button:focus {
 }
 
 button {
-  background-color: #0070f3;
+  background-color: #1b0183;
   color: #fff;
   cursor: pointer;
   transition: background-color 0.3s ease;
