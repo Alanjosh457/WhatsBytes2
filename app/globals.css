@@ -1,15 +1,14 @@
 @import "tailwindcss";
 
+/* Root Theme Variables */
 :root {
   --background: #ffffff;
   --foreground: #171717;
-}
+  --font-sans: 'Arial', sans-serif;
+  --font-mono: 'Courier New', monospace;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  background-color: var(--background);
+  color: var(--foreground);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -19,68 +18,30 @@
   }
 }
 
+/* Universal Reset */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+
+/* Body Styles */
 body {
-  background: var(--background);
+  font-family: var(--font-sans);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
 }
 
-
-/* Universal styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Arial', sans-serif;
-  background-color: #f2f4f7;
-}
-
-ul, ol {
-  list-style: none;
-}
-
+/* Links */
 a {
+  color: inherit;
   text-decoration: none;
-}
-
-button {
-  cursor: pointer;
-  border: none;
-  background-color: transparent;
-}
-
-label {
-  font-size: 14px;
-  font-weight: 600;
-}
-
-/* Optional: Add any additional global styles */
-/* Universal styles for all elements */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Arial', sans-serif;
-}
-
-/* Body */
-body {
-  background-color: #f2f4f7;
-  color: #333;
-}
-
-/* Anchor tags (links) */
-a {
-  text-decoration: none;
-  color: inherit; /* Prevents links from having their own colors */
   transition: color 0.3s ease;
 }
 
 a:hover {
-  color: #0070f3; /* Add color change on hover */
+  color: #0070f3;
 }
 
 /* Lists */
@@ -88,45 +49,42 @@ ul, ol {
   list-style: none;
 }
 
-li {
-  padding-left: 1.5em; /* Indentation for list items */
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.25;
 }
 
-dl {
-  margin-bottom: 1rem;
+/* Paragraphs */
+p {
+  margin-bottom: 1em;
 }
 
-dt {
-  font-weight: bold;
+/* Images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 /* Forms */
-form {
-  display: flex;
-  flex-direction: column;
-}
-
-input, button, select, textarea {
-  font-family: inherit;
-  font-size: 1rem;
-  padding: 10px;
+input, button, textarea, select {
+  font: inherit;
   border: 1px solid #ccc;
   border-radius: 4px;
+  padding: 10px;
   outline: none;
   transition: border-color 0.3s ease;
 }
 
-input:focus, button:focus, select:focus, textarea:focus {
+input:focus, textarea:focus, select:focus, button:focus {
   border-color: #0070f3;
 }
 
 button {
-  cursor: pointer;
   background-color: #0070f3;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  padding: 10px 20px;
+  color: #fff;
+  cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
@@ -139,65 +97,19 @@ button:disabled {
   cursor: not-allowed;
 }
 
-/* Labels */
-label {
-  font-size: 14px;
-  font-weight: 600;
-  margin-bottom: 0.5em;
+/* Code & Pre */
+code {
+  font-family: var(--font-mono);
+  background-color: #f5f5f5;
+  padding: 2px 4px;
+  border-radius: 4px;
 }
 
-/* Inputs */
-input {
-  width: 100%;
-}
-
-textarea {
-  width: 100%;
-  min-height: 120px;
-  resize: vertical;
-}
-
-/* Headings */
-h1, h2, h3, h4, h5, h6 {
-  margin: 0;
-  font-family: 'Arial', sans-serif;
-  font-weight: 600;
-}
-
-h1 {
-  font-size: 2.5rem;
-}
-
-h2 {
-  font-size: 2rem;
-}
-
-h3 {
-  font-size: 1.75rem;
-}
-
-h4 {
-  font-size: 1.5rem;
-}
-
-h5 {
-  font-size: 1.25rem;
-}
-
-h6 {
-  font-size: 1rem;
-}
-
-/* Paragraphs */
-p {
-  margin-bottom: 1em;
-  line-height: 1.6;
-}
-
-/* Images */
-img {
-  max-width: 100%;
-  height: auto;
+pre {
+  background-color: #f5f5f5;
+  padding: 1rem;
+  border-radius: 4px;
+  overflow-x: auto;
 }
 
 /* Tables */
@@ -213,113 +125,14 @@ th, td {
 
 th {
   background-color: #f4f4f4;
-  font-weight: bold;
-}
-
-/* Horizontal rules */
-hr {
-  border: 0;
-  border-top: 1px solid #ccc;
-  margin: 1rem 0;
 }
 
 /* Blockquotes */
 blockquote {
-  padding: 0.5rem 1rem;
+  padding: 1rem;
   margin: 1rem 0;
   border-left: 4px solid #ccc;
   background-color: #f9f9f9;
-}
-
-/* Code */
-code {
-  font-family: 'Courier New', Courier, monospace;
-  background-color: #f5f5f5;
-  padding: 2px 4px;
-  border-radius: 4px;
-}
-
-pre {
-  font-family: 'Courier New', Courier, monospace;
-  background-color: #f5f5f5;
-  padding: 1rem;
-  border-radius: 4px;
-  overflow-x: auto;
-}
-
-/* Containers */
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 15px;
-}
-
-/* Flexbox utility */
-.flex {
-  display: flex;
-}
-
-.flex-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.flex-column {
-  display: flex;
-  flex-direction: column;
-}
-
-.flex-wrap {
-  flex-wrap: wrap;
-}
-
-/* Grid utility */
-.grid {
-  display: grid;
-}
-
-.grid-cols-2 {
-  grid-template-columns: repeat(2, 1fr);
-}
-
-.grid-cols-3 {
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.grid-cols-4 {
-  grid-template-columns: repeat(4, 1fr);
-}
-
-/* Miscellaneous */
-hr {
-  border: 0;
-  border-top: 1px solid #eee;
-}
-
-button {
-  font-size: 1rem;
-}
-
-button:focus {
-  outline: none;
-}
-
-input:focus, textarea:focus {
-  outline: none;
-}
-
-img {
-  vertical-align: middle;
-}
-
-input[type="checkbox"]:checked {
-  background-color: #0070f3;
-}
-
-input[type="radio"]:checked {
-  background-color: #0070f3;
 }
 
 /* Scrollbars */
